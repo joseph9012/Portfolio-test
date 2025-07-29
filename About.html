@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Joseph Hordern</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      font-family: sans-serif;
+      background-color: #F0ECE4 !important;
+      color: #34568B;
+    }
+
+    /* Navbar styling - identical to home page */
+    .navbar-container {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: 300px;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .navbar a {
+      color: #34568B;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10% 10% 0;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .about-text {
+      flex: 1;
+      padding-right: 5%;
+    }
+
+    .about-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      padding: 20px;
+     
+    }
+
+    .about-photo {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-photo img {
+      max-width: 75%;
+      max-height: 70vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+      }
+
+      .about-text {
+        padding-right: 0;
+      }
+
+      .about-photo {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+    <div class="nav">
+    <div class="navbar-container">
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="https://www.dropbox.com/scl/fi/m3ixbgau4pywlrychc2o3/Joseph-Hordern-CV-25-UI-UX.pdf?rlkey=yy04821nostnka2itdqmbvuqq&st=hdf0wu01&dl=0" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </div>
+
+  <!-- About Content -->
+  <div class="about-container">
+    <div class="about-text">
+      <h1>Joseph Hordern</h1>
+      <p>
+        I'm a passionate UX/UI designer with a keen eye for detail and a strong foundation in both visual design and user-centered thinking. I thrive on turning complex problems into elegant, intuitive experiences. My work blends creativity with functionality to create impactful digital products. I'm excited to bring my skills and energy to innovative teams looking to build something great.
+      </p>
+    </div>
+    <div class="about-photo">
+      <img src="Images/JosephHordern.png" alt="Joseph Hordern Portrait">
+    </div>
+  </div>
+    
+     <div class="burger burger-squeeze" id="hamburger">
+    <div class="burger-lines"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <a href="Miles.html">Miles</a>
+    <a href="Sainsburys.html">Sainsburys</a>
+    <a href="DLE.html">DLE</a>
+    <a href="Dashboard.html">Dashboard</a>
+    <a href="Blank.html">Blank</a>
+    <a href="Blank.html">Blank</a>
+  </div>
+
+    
+
+<div class="sidebar work-about">
+  <a href="#">Work</a>
+  <a href="#">About</a>
+</div>
+
+<div class="sidebar contact-linkedin">
+  <a href="mailto:josephh12@hotmail.co.uk">Contact me</a>
+  <a href="https://www.linkedin.com/in/joe-hordern-ab3790172/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+</div>
+    
+    
+  <!-- Sidebar container where sidebar.html will be injected -->
+<div id="sidebar-container"></div>
+
+<!-- Load sidebar.html and then initialize sidebar interaction -->
+<script>
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+
+      // Hide the heading for the homepage only
+      const heading = document.getElementById('sidebar-heading');
+      if (heading) heading.style.display = 'none';
+
+      // Run the sidebar interaction script AFTER it's inserted
+      initSidebar(); // This must be defined globally in script.js
+    });
+</script>
+
+
+<script src="./script.js"></script>
+
+    
+
+</body>
+</html>

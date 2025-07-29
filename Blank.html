@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blank Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F0ECE4;
+      overflow: hidden;
+    }
+
+    .blank-page-video img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar exactly like Miles page -->
+  <div class="navbar-container">
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <div class="blank-page-video">
+    <img src="Images/Blank_page_vid.gif" alt="Blank Page Animation" />
+  </div>
+    
+<!-- Sidebar container where sidebar.html will be injected -->
+<div id="sidebar-container"></div>
+
+<!-- Load sidebar.html and then initialize sidebar interaction -->
+<script>
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+
+      // Hide the heading for the homepage only
+      const heading = document.getElementById('sidebar-heading');
+      if (heading) heading.style.display = 'none';
+
+      // Run the sidebar interaction script AFTER it's inserted
+      initSidebar(); // This must be defined globally in script.js
+    });
+</script>
+
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>

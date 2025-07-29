@@ -1,0 +1,677 @@
+:root {
+  --primary: #34568B;
+  --secondary: #F06C00;
+  --light: #f9f9f9;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #F0ECE4;
+  min-height: 100vh; /* Changed from 3000px */
+  height: auto !important; /* Override global styles */
+  overflow-y: auto;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dle-hero-section {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.dle-heading-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* Optionally, you can set a min-height if you want a certain space for the hero */
+}
+
+.dle-hero-text {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 50%;
+  max-width: 700px;
+  color: #f9f9f9; /* Change if you want */
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 2;
+  background: none; /* No background */
+}
+
+.dle-hero-text h1 {
+  padding-right: 40px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #f9f9f9;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  background: none;
+}
+
+.project-overview h2 {
+    padding-right: 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #f9f9f9;
+  background: none;
+}
+
+.project-overview p {
+  padding-right: 40px;
+  font-size: 1.2rem;
+  color: #073642;
+  margin: 0;
+  max-width: 25em;
+  background: rgba(255,255,255,0.7);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+  .dle-hero-text {
+    width: 90%;
+    max-width: 100vw;
+    padding: 0 1em;
+    top: 10px;
+  }
+  .dle-hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    
+  }
+  .project-overview h2 {
+    font-size: 1.1rem;
+  }
+  .project-overview p {
+    font-size: 1rem;
+  }
+}
+
+
+/* Info section */
+.dle-info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: -55px;
+  margin-bottom: -55px;
+  width: 100vw;
+  max-width: 100%;
+}
+
+.dle-info-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-blue);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dle-info-left {
+  align-items: center;
+  padding-left: 100px;
+}
+
+.dle-info-center {
+  align-items: center;
+}
+
+.dle-info-right {
+  align-items: center;
+  padding-right: 100px;
+}
+
+.dle-info-column h3 {
+  font-weight: bold;
+  font-size: 1.35rem;
+  margin-bottom: 0.7em;
+  color: var(--primary);
+  text-align: center;
+}
+
+.dle-info-content {
+  font-weight: normal;
+  font-size: 1.12rem;
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .dle-info-left { padding-left: 40px; }
+  .dle-info-right { padding-right: 40px; }
+}
+
+@media (max-width: 900px) {
+  .dle-hero-text {
+    width: 90%;
+    max-width: 100vw;
+    padding: 0 1em;
+    top: 10px;
+  }
+  .dle-hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .project-overview h2 {
+    font-size: 1.1rem;
+  }
+  .project-overview p {
+    font-size: 1rem;
+  }
+  .dle-info-section {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 24px;
+    gap: 24px;
+  }
+  .dle-info-left,
+  .dle-info-right,
+  .dle-info-center {
+    padding-left: 0;
+    padding-right: 0;
+    align-items: center;
+  }
+  .dle-info-column h3 {
+    text-align: center;
+  }
+}
+
+.dle-secondary-divider {
+  border: none;
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 2.5px;
+margin: 30px 75px 0 75px;
+}
+
+.dle-userflow-img {
+  display: block;
+  width: calc(100vw - 250px); /* 125px left + 125px right */
+  max-width: 100%;
+  margin-left: 125px;
+  margin-right: 125px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding: 0;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* Responsive: reduce horizontal padding on smaller screens */
+@media (max-width: 900px) {
+  .dle-userflow-img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100vw - 40px);
+  }
+}
+
+.dle-userflow-caption {
+  color: var(--primary);
+  font-size: 1.12rem;
+  font-weight: normal;
+  line-height: 1.5;
+  max-width: calc(50vw - 170px); /* ensures it doesn't run into the center */
+  margin-top: 30px;
+  margin-left: 125px;
+  margin-bottom: 0;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Responsive: stack full width on small screens */
+@media (max-width: 900px) {
+  .dle-userflow-caption {
+    max-width: 100vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+}
+
+
+/* Aim and problem */
+.dle-problem-aim-section {
+  padding-bottom: 0 !important;
+  padding-top: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+.dle-problem-aim-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 0px; /* Adjust as needed for spacing above */
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* LEFT COLUMN */
+.dle-problem-aim-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dle-problem-aim-left {
+  align-items: flex-start;
+  padding-left: 60px;
+  max-width: 350px;
+  min-width: 180px;
+  position: relative;
+}
+
+.dle-problem-aim-block {
+  margin-bottom: 0;
+}
+
+.dle-problem-aim-title {
+  font-weight: bold;
+  font-size: 1.35rem;
+  color: var(--primary);
+  margin-bottom: 0.5em;
+}
+
+.dle-problem-aim-text {
+  font-size: 1.12rem;
+  color: var(--primary);
+  font-weight: normal;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+    word-break: break-word; 
+}
+
+/* RIGHT COLUMN */
+.dle-problem-aim-right {
+  position: relative;
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0;
+  padding-right: 60px;
+  padding-left: 30px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dle-problem-aim-right-block {
+  margin-bottom: 0;
+  /* This will be aligned with the left block via margin-top if needed */
+}
+
+.dle-problem-aim-right-text {
+  font-size: 1.12rem;
+  color: var(--primary);
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  word-break: break-word; 
+}
+
+/* ALIGNMENT HELPERS: match vertical position of right text to left heading */
+.dle-problem-aim-right-block.problem {
+  margin-top: 0; /* align to The Problem title */
+}
+
+.dle-problem-aim-right-block.aim {
+  /* Find the offset of The Aim, which is 30px (margin-top) + title height + bottom margin */
+  margin-top: 50px; /* same as left .dle-problem-aim-block margin-top */
+}
+
+.dle-problem-aim-section > *:last-child,
+.dle-problem-aim-right-block:last-child,
+.dle-problem-aim-text:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .dle-problem-aim-left,
+  .dle-problem-aim-right {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .dle-problem-aim-section {
+    flex-direction: column;
+    gap: 36px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .dle-problem-aim-left,
+  .dle-problem-aim-right {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .dle-problem-aim-right-text {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+}
+
+
+
+
+.dle-current-work-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch; /* <-- This makes all children match in height */
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 30px;
+  gap: 24px;
+}
+
+.dle-current-work-img {
+  flex: 1 1 0;
+  width: 100%;
+  height: 400px; /* or whatever height you want */
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+
+
+.dle-current-work-caption {
+  color: var(--primary);
+  font-size: 1.12rem;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: 14px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dle-current-work-img3 {
+  height: 338px;      /* Or any value less than 400px */
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Responsive: stack images vertically and caption below third image */
+@media (max-width: 900px) {
+  .dle-current-work-images {
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .dle-current-work-img-caption-wrapper {
+    align-items: flex-start;
+  }
+  .dle-current-work-caption {
+    font-size: 1rem;
+    margin-top: 12px;
+  }
+  .dle-current-work-img {
+    height: 160px;
+  }
+}
+
+
+
+/* User testing*/
+.dle-interview-section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.dle-interview-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 20px;
+}
+
+.dle-interview-img1 {
+  width: 55%;
+  min-width: 220px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+.dle-interview-right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1 1 0;
+  min-width: 170px;
+  height: 100%;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.dle-interview-textbox {
+  width: 100%;
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.dle-interview-img2 {
+  width: 100%;
+  max-width: 900px;
+  min-width: 140px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  align-self: flex-end;
+}
+
+.dle-interview-bottom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding-left: 60px;
+  gap: 20px;
+}
+
+.dle-interview-bottom-label {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary);
+  align-self: flex-start;
+  margin-top: 0;
+  min-width: 130px;
+  line-height: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dle-interview-img3 {
+  width: calc(50%);
+  max-width: 900px;
+  min-width: 180px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== MOBILE: Stacked and re-ordered ===== */
+@media (max-width: 900px) {
+  .dle-interview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  /* All containers display as block elements in the stack */
+  .dle-interview-row,
+  .dle-interview-right-col,
+  .dle-interview-bottom-row {
+    display: contents;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Force mobile stack order */
+  .dle-interview-bottom-label { order: 1; }
+  .dle-interview-textbox      { order: 2; }
+  .dle-interview-img1         { order: 3; width: 100%; max-width: 100%; min-width: 0; }
+  .dle-interview-img2         { order: 4; width: 100%; max-width: 100%; min-width: 0; }
+  .dle-interview-img3         { order: 5; width: 100%; max-width: 100%; min-width: 0; }
+}
+
+
+.ab-testing-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px; /* or adjust as needed for spacing from previous section */
+  margin-bottom: 10px; /* or adjust as needed for spacing from next section */
+}
+
+.ab-testing-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ab-testing-col-a {
+  margin-right: 5px;
+}
+
+.ab-testing-col-b {
+  margin-left: 5px;
+}
+
+.ab-testing-title {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.ab-testing-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.ab-image {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 3px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 900px) {
+  .ab-testing-section {
+  flex-direction: column;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  }
+
+  .ab-testing-col {
+    width: 100%;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .ab-testing-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .ab-testing-images {
+    width: 100%;
+  }
+  .ab-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.DLE-Final-img {
+max-width: 100%;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-text {
+  font-size: 1.2rem;
+  color: var(--primary);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

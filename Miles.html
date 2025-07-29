@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miles Project</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Miles.css" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #F0ECE4;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container image-container-title">
+  <img src="Images/Miles_title.png" alt="Miles Title" class="responsive-image">
+</div>
+<hr class="Miles-secondary-divider">
+
+<section class="Miles-problem-aim-section">
+  <div class="Miles-problem-aim-col Miles-problem-aim-left">
+    <div class="Miles-problem-aim-block">
+      <div class="Miles-problem-aim-title">The Problem</div>
+      <div class="Miles-problem-aim-text">The process of hiring a car currently requires a human to check each qoute.</div>
+    </div>
+    <div class="Miles-problem-aim-block" style="margin-top:30px;">
+      <div class="Miles-problem-aim-title">The Aim</div>
+      <div class="Miles-problem-aim-text">Create a mobile app that allows the user to rent high end vehicles without the need for human approval on Miles and More's end.</div>
+    </div>
+  </div>
+  <div class="Miles-problem-aim-col Miles-problem-aim-right">
+    <div class="Miles-problem-aim-right-block problem">
+      <div class="Miles-problem-aim-right-text">
+Miles and More need a mobile app for rental of home-delivered luxury cars from Miles & More in London. They currently have a website but all requests and quotes must go via a human for approval. This not only makes a long wait time for the customer as they have to wait for their request to be checked manually but also time consuming for the team at Miles and More.</div>
+    <div class="Miles-problem-aim-right-block aim">
+      <div class="Miles-problem-aim-right-text">
+The aim of this project is to design a high end mobile app allowing cumsters to easily and quickly rent high end cars. Freeing up the time fo the Miles and More team so they can spend their time more benifically on other tasks and improving the service they offer.   </div>
+</section>
+
+<hr class="Miles-secondary-divider">
+<div class="image-container image-container-userflow">
+  <img src="Images/Miles_user_flow.png" alt="Miles User Flow" class="responsive-image">
+</div>
+
+    <div class="custom-image-container">
+    <img src="Images/Miles_wireframe2.png" alt="Miles Wireframe 2" class="manual-image wireframe2">
+    <img src="Images/Miles_wireframe_highres2.png" alt="Miles Wireframe Highres 2" class="manual-image wireframe-highres2">
+  </div>
+
+
+  <!-- Navbar -->
+  <div class="navbar-container">
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="https://www.dropbox.com/scl/fi/m3ixbgau4pywlrychc2o3/Joseph-Hordern-CV-25-UI-UX.pdf?rlkey=yy04821nostnka2itdqmbvuqq&st=hdf0wu01&dl=0" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </div>
+
+    <!-- Sidebar container where sidebar.html will be injected -->
+<div id="sidebar-container"></div>
+
+
+<!-- Load sidebar.html and then initialize sidebar interaction -->
+<script>
+  fetch('sidebar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('sidebar-container').innerHTML = html;
+
+      // Hide the heading for the homepage only
+      const heading = document.getElementById('sidebar-heading');
+      if (heading) heading.style.display = 'none';
+
+      // Run the sidebar interaction script AFTER it's inserted
+      initSidebar(); // This must be defined globally in script.js
+    });
+</script>
+
+
+<script src="./script.js"></script>
+
+
+    
+
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/VXfpfYWNYVeohjqSzF8uyt/The-School-of-UX-Cohort-8-Project-Car-Rental-exercise?page-id=1008%3A810&node-id=2735-10269&viewport=211%2C-1019%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=2735%3A10283&show-proto-sidebar=1&embed-host=share" allowfullscreen></iframe>
+    </body>
+</html>
